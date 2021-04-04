@@ -23,16 +23,18 @@ class Solution {
     }
 
     function moveZeroes2(&$nums) {
+        //这个数组会扩容，根据零的个数扩容
         for($i=0;$i<count($nums);$i++) {
             if ($nums[$i] == 0) {
                 unset($nums[$i]);
-                array_push($nums,0);
+//                array_push($nums,0);
+                $nums[]=0;
             }
         }
     }
 }
 $arr = [0,1,0,3,12];
 $class = new Solution();
-//$class->moveZeroes($arr);
-$class->moveZeroes2($arr);
+$class->moveZeroes($arr);
+//$class->moveZeroes2($arr);
 print_r($arr);

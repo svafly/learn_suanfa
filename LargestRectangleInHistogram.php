@@ -35,7 +35,26 @@ class Solution {
         }
         return $maxArea;
     }
+
+
+    function largestRectangleArea2(array $heights):int {
+        $length = count($heights);
+        if ($heights == null || $length<1) return 0;
+        //用栈的方式
+        $stack = new \SplStack();
+        $maxArea = 0;
+        for ($i=0;$i<=$length;$i++) {
+            $cur = ($i==$length ? -1 : $heights[$i]);
+            while (!$stack->isEmpty() && $heights[$stack->top()] >= $cur) {
+                $h = $heights[$stack->pop()];
+                $w = $stack->isEmpty() ? $i : $i - $stack->top() - 1;
+                $maxArea = max($maxArea, $h * $w);
+            }
+            $stack->push($i);
+        }
+        return $maxArea;
+    }
 }
 $solution = new Solution();
-$tmp = [4,2,0,3,2,4,3,4];
-print_r($solution->largestRectangleArea($tmp));
+$tmp = [2,4];
+print_r($solution->largestRectangleArea2($tmp));

@@ -35,6 +35,6 @@ class Solution {
 }
 $arr = [0,1,0,3,12];
 $class = new Solution();
-$class->moveZeroes($arr);
-//$class->moveZeroes2($arr);
+//$class->moveZeroes($arr);
+$class->moveZeroes2($arr);
 print_r($arr);

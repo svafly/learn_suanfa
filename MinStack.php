@@ -14,6 +14,8 @@ class MinStack {
      * @return NULL
      */
     function push(int $val) {
+        //先预设一个最大的整型，当有最小值出现的时候，同时存入前最小值和当前最小值
+        //这样当最小值出栈的时候，能同时取到下一个最小值，用空间换时间
         if ($val <= $this->min) {
             $this->heap->push($this->min);
             $this->min = $val;

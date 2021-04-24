@@ -10,7 +10,6 @@ class LRUCache {
      * @param Integer $capacity
      */
     function __construct(int $capacity) {
-        print_r(array(1=>1)+array(4=>4));exit;
         $this->cap = $capacity;
         $this->head = new Node(0,0);
         $this->tail = new Node(0,0);

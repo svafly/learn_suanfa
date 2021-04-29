@@ -9,7 +9,7 @@ class Solution {
      * @param String $s
      * @return Boolean
      */
-    public function isPalindrome(String $s):bool {
+    public function isPalindrome2(String $s):bool {
         $str = $this->replaceStr($s);
         return $str == $this->reverseStr($str);
     }
@@ -28,7 +28,7 @@ class Solution {
      * @param String $s
      * @return Boolean
      */
-    public function isPalindrome2(String $s):bool {
+    public function isPalindrome3(String $s):bool {
         $tmp="";
         //1.判断字母和数字的字符，取出来;2.两头比较是否相等
         //IntlChar在PHP7之后才增加
@@ -55,7 +55,7 @@ class Solution {
         return true;
     }
 
-    public function isPalindrome3(String $s):bool {
+    public function isPalindrome(String $s):bool {
         $tmp="";
         //头尾指针比较
         foreach(str_split($s) as $value){

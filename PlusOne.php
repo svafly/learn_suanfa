@@ -5,7 +5,7 @@ class Solution {
      * @param Integer[] $digits
      * @return Integer[]
      */
-    function plusOne($digits) {
+    function plusOne(array $digits):array {
         $len = count($digits);
         for($i=$len-1;$i>=0;$i--){
             if($digits[$i]<9){

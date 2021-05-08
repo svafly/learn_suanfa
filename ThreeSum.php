@@ -91,7 +91,7 @@ class ThreeSum {
     }
 }
 $solution = new ThreeSum();
-$testArr = [1,-1,-1,0];
+$testArr = [0,0,0];
 //print_r($solution->threeSum($testArr));
 //print_r($solution->threeSum2($testArr));
 print_r($solution->threeSum3($testArr));

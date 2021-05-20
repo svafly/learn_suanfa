@@ -29,7 +29,16 @@ class Solution {
         print_r($nums);
         return count($nums);
     }
+
+    function removeDuplicates3(&$nums) {
+        if ($nums==null || count($nums)==0)return 0;
+        $q=1;
+        for($i=1;$i<count($nums);$i++) {
+            if($nums[$i]!=$nums[$i-1])$nums[$q++]=$nums[$i];
+        }
+        return $q;
+    }
 }
 $solution = new Solution();
 $arr=[0,0,1,1,1,2,2,3,3,4];
-print_r($solution->removeDuplicates2($arr));
+print_r($solution->removeDuplicates3($arr));

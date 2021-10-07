@@ -38,6 +38,20 @@ class Solution {
         }
         return $q;
     }
+
+    function removeDuplicates4(&$nums) {
+        if ($nums==null || count($nums)==0)return 0;
+        $p=0;
+        $q=1;
+        while ($q<count($nums)) {
+            if ($nums[$p] != $nums[$q]){
+                $nums[$p+1] = $nums[$q];
+                $p++;
+            }
+            $q++;
+        }
+        return $p+1;
+    }
 }
 $solution = new Solution();
 $arr=[0,0,1,1,1,2,2,3,3,4];

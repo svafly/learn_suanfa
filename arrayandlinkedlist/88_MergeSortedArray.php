@@ -29,6 +29,28 @@ class Solution {
         sort($nums1);
         return $nums1;
     }
+
+    //从前往后排序，放到临时数组，然后拷贝到nums1
+    function merge3(&$nums1, $m, $nums2, $n) {
+        $tmp=[];
+        $i=0;
+        $j=0;
+        $tar=0;
+        while($i<$m && $j<$n){
+            if($nums1[$i]<=$nums2[$j]){
+                $tmp[$tar++] = $nums1[$i++];
+            } else {
+                $tmp[$tar++] = $nums2[$j++];
+            }
+        }
+        while($j<$n){
+            $tmp[$tar++] = $nums2[$j++];
+        }
+        while($i<$m){
+            $tmp[$tar++] = $nums1[$i++];
+        }
+        $nums1 = $tmp;
+    }
 }
 $solution = new Solution();
 $arr1=[1,2,3,0,0,0];

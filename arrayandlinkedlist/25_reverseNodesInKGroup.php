@@ -1,4 +1,5 @@
 <?php
+require_once "Node.php";
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -32,8 +33,8 @@ class Solution {
     function reverseK($head,$tail) {
         $pre = null;
         $next = null;
-        if ($head!=$tail){
-            $next = $head->next;
+        while ($head!=$tail){
+            $next = $head->next();
             $head->next = $pre;
             $pre = $head;
             $head = $next;

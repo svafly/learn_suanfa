@@ -46,3 +46,6 @@ class Solution {
         return $this->reverseListInt($next,$head);
     }
 }
+
+//https://zhuanlan.zhihu.com/p/105749135
+//这个讲解真的细的不能再细了，链表看似简单，但是里面的指针真的很容易搞不清楚

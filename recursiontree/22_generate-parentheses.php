@@ -3,6 +3,7 @@ class Solution {
 
     private $list = [];
     /**
+     * 括号的生成
      * @param Integer $n
      * @return String[]
      */

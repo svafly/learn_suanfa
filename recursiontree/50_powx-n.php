@@ -2,6 +2,7 @@
 class Solution {
 
     /**
+     * pow(x,n)
      * @param Float $x
      * @param Integer $n
      * @return Float

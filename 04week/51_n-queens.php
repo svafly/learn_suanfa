@@ -7,6 +7,7 @@ class Solution {
     private $usedPlus=[];
     private $usedMinus=[];
     /**
+     * N皇后问题
      * @param Integer $n
      * @return String[][]
      */

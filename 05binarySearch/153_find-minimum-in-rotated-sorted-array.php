@@ -2,7 +2,7 @@
 class Solution {
 
     /**
-     * 寻找排序数组中的最小值
+     * 寻找旋转排序数组中的最小值
      * @param Integer[] $nums
      * @return Integer
      */
@@ -16,6 +16,21 @@ class Solution {
             else $right = $mid;
         }
         return $nums[$left];
+    }
+
+    //求后继，二分查找
+    function findMin2($nums) {
+        $left=0;
+        $right=count($nums)-1;
+        while($left<$right){
+            $mid = floor(($left+$right)/2);
+            if($nums[$mid]<=$nums[$right]) {
+                $right = $mid;
+            } else {
+                $left = $mid +1;
+            }
+        }
+        return $nums[$right];
     }
 }
 

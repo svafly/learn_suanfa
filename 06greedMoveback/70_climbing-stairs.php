@@ -1,6 +1,7 @@
 <?php
 class climbStairs {
     /**
+     * 爬楼梯
      * @param Integer $n
      * @return Integer
      */
@@ -15,3 +16,5 @@ class climbStairs {
 }
 $solution = new climbStairs();
 print_r($solution->climbStairs(5));
+
+//这里用递归，分解成两个子问题，爬一级和爬2级的情况，用map来存储已经求解过的楼梯级数，避免重复计算

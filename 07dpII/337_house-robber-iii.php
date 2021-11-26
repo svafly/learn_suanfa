@@ -31,9 +31,9 @@ class Solution {
 
         $res=[];
         //状态转移
-        //根不偷
+        //根不偷，叶子可偷可不偷
         $res[0] = max($left[0],$left[1])+max($right[0],$right[1]);
-        //根偷，叶子都不偷
+        //根偷，则叶子都不偷
         $res[1] = $left[0]+$right[0]+$root->val;
         return $res;
     }

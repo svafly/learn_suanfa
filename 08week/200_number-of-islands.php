@@ -31,11 +31,16 @@ class Solution {
                 for($k=0;$k<4;$k++) {
                     $nx = $i+$dx[$k];
                     $ny = $j+$dy[$k];
-                    if($nx>=0 && $ny>=0 && $nx < $m && $ny<$n && $grid[$i][$j]=="1"){
+                    if($nx>=0 && $ny>=0 && $nx < $m && $ny<$n && $grid[$nx][$ny]=="1"){
                         $this->unionSet($this->num($i,$j),$this->num($nx,$ny));
                     }
                 }
             }
+        }
+
+        $ans=0;
+        for($i=0;$i<$n*$m;$i++) {
+            if($this->find($i) == $i)$ans++;
         }
         return $this->count;
     }
@@ -48,9 +53,10 @@ class Solution {
     function unionSet($x,$y) {
         $x = $this->find($x);
         $y = $this->find($y);
-        echo $x."-".$y.";";
+        // echo $x."-".$y.";";
         if ($x!=$y){
             $this->fa[$x] = $y;
+            print_r($this->fa[$x]);
             $this->count--;
         }
     }
@@ -59,3 +65,4 @@ class Solution {
         return $this->t*$i + $j;
     }
 }
+//初始化所有陆地都为一个单独集合，然后按照方向合并相邻陆地

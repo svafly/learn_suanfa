@@ -37,11 +37,6 @@ class Solution {
                 }
             }
         }
-
-        $ans=0;
-        for($i=0;$i<$n*$m;$i++) {
-            if($this->find($i) == $i)$ans++;
-        }
         return $this->count;
     }
 

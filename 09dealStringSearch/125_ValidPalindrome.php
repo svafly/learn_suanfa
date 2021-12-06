@@ -79,3 +79,5 @@ var_dump($class1->isPalindrome("A man, a plan, a canal: Panama"));
 var_dump($class1->isPalindrome2("race a car"));
 var_dump($class1->isPalindrome("race a car"));
 var_dump($class1->isPalindrome3("race a car"));
+
+//如果不想耗费空间存储temp，用O(1)的空间的话，可以用查找next和查找pre来直接比较
